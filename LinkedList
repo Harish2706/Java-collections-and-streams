@@ -1,0 +1,22 @@
+package org.example;
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Integer>ll = new LinkedList<>();
+        ll.add(10);
+        ll.add(20);
+        ll.add(30);
+        ll.add(40);
+        ll.get(2);
+        ll.addLast(50);
+        ll.addFirst(5);
+        ll.getLast();
+        ll.removeIf(n -> n % 20 == 0);
+        System.out.println("LinkedList: " + ll);
+        LinkedList<String> strList = new LinkedList<>(Arrays.asList("Apple", "Banana", "Cherry"));
+        LinkedList<String> anotherStrList = new LinkedList<>(Arrays.asList("Date","cherry"));
+        strList.removeAll(anotherStrList);
+    }
+}
