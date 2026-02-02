@@ -1,0 +1,39 @@
+package org.example;
+
+import java.util.*;
+//tc
+//access by index n
+//searching o(n)
+//insertion o(n) worst case resize
+//removal o(n) worst case shift
+//iteration o(n)
+
+//ArrayList - it can dynamically change its size
+//Order preservation index based access allow duplicates
+//when size exceeds capacity it extends 1.5 the size and copy the first array to new arraylist
+//default capacity is 10
+//Add the element check ,resize,add the element
+//size wont shrink until trimtosize
+public class Main {
+    public static void main(String[] args) {
+        Arrays.asList(1,2,3,4,5); // fixed size list u cannot add or remove elements
+        List<Integer>list3 = List.of(1,2,3,4,5); // no change not even set in this list
+        ArrayList<Integer> list1 = new ArrayList<>(200); // initial capacity 200
+     ArrayList<Integer>list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        System.out.println(list.size());
+        System.out.println(list.get(0));
+        System.out.println(list.contains(20));
+        for(int x : list){
+            System.out.println(x);
+        }
+        list.remove(2);//first of value and index can be also done
+        list.remove(Integer.valueOf(10));
+        list.add(2,30);
+        list.set(2,50); // modifies element at index 2
+        list.addAll(list3);
+       Integer arrs[] =  list.toArray(new Integer[0]);
+        Collections.sort(list);
+    }
+}
