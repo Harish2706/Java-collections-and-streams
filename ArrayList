@@ -1,3 +1,7 @@
+//vector dynamic array synchronized resizing doubles capacity when full random access like arraylist
+//best used for multi-threaded environments where thread safety is required
+//otherwise arraylist is preferred for better performance in single-threaded scenarios
+
 package org.example;
 
 import java.util.*;
