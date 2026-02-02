@@ -1,0 +1,51 @@
+package org.example;
+
+import java.util.*;
+//comparator example two objects of same type
+//list.sort(null) default ascending
+
+//s1 and s2 are two strings being compared
+//comparing order is random like first and third etc
+//  < 0   `s1` comes before `s2`   |
+//  0  order doesn’t matter (equal) |
+// > 0  `s1` comes after `s2`    |
+
+class StringLengthComparator implements Comparator<String> {
+    @Override
+    public int compare(String s1, String s2) {
+        System.out.println("Comparing \"" + s1 + "\" and \"" + s2 + "\""+ (s1.length() - s2.length()));
+        return s1.length() - s2.length();//then ascending order of length
+    }
+}
+class Student {
+    String name;
+    int age;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+      List<String> words = Arrays.asList("banana", "apple", "kiwi", "cherry", "blueberry");
+      words.sort(new StringLengthComparator());
+      System.out.println(words);
+      List<Student> students =  new ArrayList<>();
+      students.add(new Student("Alice", 22));
+      students.add(new Student("Bob", 20));
+      students.add(new Student("Charlie", 23));
+      Comparator<Student>byage = Comparator.comparingInt(Student::getAge).reversed().thenComparing(Student::getName);
+      //student -> student.getGpa() = Student::getAge
+      students.sort(byage);
+      for (Student s : students) {
+          System.out.println(s.getName() + " - " + s.getAge());
+      }
+    }
+}
