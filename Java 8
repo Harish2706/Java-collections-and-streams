@@ -80,6 +80,22 @@ public class Main {
         List<String>names = Arrays.asList("iPhone","Samsung","OnePlus");
         List<MobilePhone>list1 =  names.stream().map(MobilePhone :: new).collect(Collectors.toList());
 
+//(args) -> ClassName.method(args)  to ClassName::method
+//Function<Integer, Integer> square = Math::abs;
+//System.out.println(square.apply(-5)); // 5
+/*
+String msg = "hello";
+Supplier<String> s = msg::toUpperCase;
+System.out.println(s.get()); // HELLO
+
+
+
+*/
+
+
+
+ 
+
     }
 }
 class MobilePhone{
